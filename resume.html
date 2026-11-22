@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resume — Swapnil Sawant, AI Engineer</title>
+  <meta name="description" content="Resume of Swapnil Sawant, AI Engineer specialising in LLM document intelligence, RAG and agentic workflows.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%23818cf8'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='monospace' font-size='27' font-weight='700' text-anchor='middle' fill='%2304070d'%3ESS%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <style>
+    .resume-page {
+      padding: 6.5rem 0 4rem;
+    }
+
+    .resume-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: min(880px, 100% - 2.5rem);
+      margin: 0 auto 1.25rem;
+    }
+
+    .resume-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .resume-back:hover {
+      color: var(--text);
+    }
+
+    .resume-actions {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .resume-sheet {
+      width: min(880px, 100% - 2.5rem);
+      margin: 0 auto;
+      padding: clamp(1.5rem, 5vw, 3.25rem);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+      box-shadow: var(--shadow);
+    }
+
+    .resume-name {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.9rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      font-weight: 600;
+    }
+
+    .resume-role {
+      margin-top: 0.4rem;
+      color: var(--cyan);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .resume-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.1rem;
+      margin-top: 1.1rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .resume-contact a:hover {
+      color: var(--cyan);
+    }
+
+    .resume-contact i {
+      margin-right: 0.3rem;
+      color: var(--muted-2);
+      font-size: 0.75rem;
+    }
+
+    .resume-section {
+      margin-top: 1.75rem;
+    }
+
+    .resume-section h2 {
+      margin-bottom: 0.85rem;
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .resume-section h2::after {
+      content: "";
+      display: block;
+      width: 2.5rem;
+      height: 2px;
+      margin-top: 0.45rem;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    .resume-summary {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .resume-skill-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 0.75rem;
+      padding: 0.4rem 0;
+      font-size: 0.85rem;
+    }
+
+    .resume-skill-row strong {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .resume-skill-row span {
+      color: var(--muted);
+    }
+
+    .resume-item {
+      padding: 0 0 1.1rem;
+      margin-bottom: 1.1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .resume-item:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .resume-item-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.25rem 1rem;
+    }
+
+    .resume-item-head h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .resume-item-head time {
+      color: var(--muted-2);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      white-space: nowrap;
+    }
+
+    .resume-company {
+      margin: 0.15rem 0 0.55rem;
+      color: var(--cyan);
+      font-size: 0.8rem;
+    }
+
+    .resume-company span {
+      color: var(--muted-2);
+    }
+
+    .resume-bullets {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .resume-bullets li {
+      position: relative;
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.6;
+    }
+
+    .resume-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.58rem;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--indigo);
+    }
+
+    .resume-bullets strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .resume-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+
+    .resume-tags span {
+      padding: 0.18rem 0.45rem;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--muted-2);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+    }
+
+    @media (max-width: 620px) {
+      .resume-skill-row {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+      }
+
+      .resume-page {
+        padding-top: 5.5rem;
+      }
+    }
+
+    @media print {
+      @page {
+        margin: 12mm;
+      }
+
+      body {
+        background: #fff !important;
+        color: #111 !important;
+      }
+
+      body::before,
+      .bg-grid,
+      .resume-toolbar {
+        display: none !important;
+      }
+
+      .resume-page {
+        padding: 0;
+      }
+
+      .resume-sheet {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+      }
+
+      .resume-name,
+      .resume-section h2,
+      .resume-item-head h3,
+      .resume-skill-row strong,
+      .resume-bullets strong {
+        color: #111 !important;
+      }
+
+      .resume-role,
+      .resume-company {
+        color: #1d4ed8 !important;
+      }
+
+      .resume-summary,
+      .resume-skill-row span,
+      .resume-bullets li,
+      .resume-contact {
+        color: #333 !important;
+      }
+
+      .resume-contact,
+      .resume-item {
+        border-color: #ddd !important;
+      }
+
+      .resume-contact a,
+      .resume-contact i,
+      .resume-item-head time {
+        color: #444 !important;
+      }
+
+      .resume-tags span {
+        border-color: #ccc !important;
+        background: #f4f4f5 !important;
+        color: #333 !important;
+      }
+
+      .resume-section {
+        break-inside: avoid;
+      }
+
+      .resume-item {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <main class="resume-page" id="main">
+    <div class="resume-toolbar">
+      <a class="resume-back" href="index.html">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to portfolio
+      </a>
+      <div class="resume-actions">
+        <a class="btn btn-ghost btn-sm" href="mailto:swapnil.sawant.me@gmail.com">
+          <i class="fas fa-envelope" aria-hidden="true"></i> Email me
+        </a>
+        <button class="btn btn-primary btn-sm" type="button" onclick="window.print()">
+          <i class="fas fa-print" aria-hidden="true"></i> Print / Save as PDF
+        </button>
+      </div>
+    </div>
+
+    <article class="resume-sheet">
+      <header>
+        <h1 class="resume-name">Swapnil Sawant</h1>
+        <p class="resume-role">AI Engineer</p>
+        <div class="resume-contact">
+          <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Mumbai, India</span>
+          <a href="mailto:swapnil.sawant.me@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i>swapnil.sawant.me@gmail.com</a>
+          <a href="tel:+917738317675"><i class="fas fa-phone" aria-hidden="true"></i>+91 77383 17675</a>
+          <a href="https://www.linkedin.com/in/swapnil-scientist/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i>linkedin.com/in/swapnil-scientist</a>
+          <a href="https://github.com/SwapViSonu" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i>github.com/SwapViSonu</a>
+        </div>
+      </header>
+
+      <section class="resume-section">
+        <h2>Profile</h2>
+        <p class="resume-summary">
+          AI Engineer with hands-on experience building production-grade AI systems,
+          specialising in LLM-powered Document Intelligence Processing (IDP). Expert at
+          integrating OpenAI GPT, Gemini and Mistral with OCR and image-processing stacks into
+          end-to-end ETL pipelines that eliminated 80%+ of manual data entry. Proficient in
+          prompt engineering, RAG architectures, agentic AI (LangGraph) and REST API design.
+          Proven ability to translate complex business problems into reliable, monitored,
+          cost-optimised AI solutions — from POC to production.
+        </p>
+      </section>
+
+      <section class="resume-section">
+        <h2>Skills</h2>
+        <div class="resume-skill-row">
+          <strong>Languages</strong>
+          <span>Python, SQL</span>
+        </div>
+        <div class="resume-skill-row">
+          <strong>Generative AI</strong>
+          <span>OpenAI GPT, Gemini, Mistral, prompt engineering, RAG, LangChain, LangGraph, agentic AI, Pinecone, Qdrant, FAISS</span>
+        </div>
+        <div class="resume-skill-row">
+          <strong>Document AI</strong>
+          <span>Google Vision OCR, Tesseract, PyMuPDF, pdfplumber, OpenCV, Pillow (PIL)</span>
+        </div>
+        <div class="resume-skill-row">
+          <strong>Backend</strong>
+          <span>FastAPI, Flask, REST APIs, BrowserUse, API integration</span>
+        </div>
+        <div class="resume-skill-row">
+          <strong>Data</strong>
+          <span>ETL pipelines, data extraction, validation and transformation, regex, EDA, SQL Server, Pandas</span>
+        </div>
+        <div class="resume-skill-row">
+          <strong>ML &amp; analytics</strong>
+          <span>scikit-learn, TensorFlow, classification, regression, clustering, Power BI</span>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Work Experience</h2>
+
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <h3>AI/ML Engineer</h3>
+            <time>Mar 2024 — Present</time>
+          </div>
+          <p class="resume-company">Jeena &amp; Company <span>· Mumbai, Maharashtra</span></p>
+          <ul class="resume-bullets">
+            <li>Partnered with Operations and Accounts teams to map workflows, identify high-volume manual tasks and prioritise automation by effort saved and risk — designing each solution as a non-intrusive layer over existing systems.</li>
+            <li>Architected and deployed <strong>LLM-powered IDP pipelines</strong> in Python for airway bills, invoices and shipping documents, automating <strong>80%+ of manual data entry</strong> across native PDFs, scanned images and mixed-format files.</li>
+            <li>Built web automation with <strong>BrowserUse</strong> to log into external portals and download operational and PD account reports, feeding downstream processing without human intervention.</li>
+            <li>Delivered a <strong>FastAPI PD Reconciliation web app</strong> for air and sea export finance, automating the complete reconciliation cycle and reducing manual effort by <strong>70–80%</strong>.</li>
+            <li>Engineered ETL and validation layers converting unstructured documents into structured JSON and DataFrames, loaded into SQL Server with high data integrity.</li>
+            <li>Designed scalable batch processing with tiered fallbacks (native text extraction, LLM parsing, OCR), logging, error handling and monitoring.</li>
+            <li>Built a <strong>multi-agent Text-to-SQL assistant</strong> (LangChain, LangGraph) so non-technical teams can query business data in plain English, cutting reliance on engineers for ad-hoc reports.</li>
+          </ul>
+          <div class="resume-tags">
+            <span>Python</span>
+            <span>LLMs</span>
+            <span>LangGraph</span>
+            <span>FastAPI</span>
+            <span>SQL Server</span>
+            <span>OCR</span>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <h3>Data Science Intern</h3>
+            <time>Apr 2023 — Jun 2023</time>
+          </div>
+          <p class="resume-company">Oasis Infobyte &amp; The Sparks Foundation <span>· Remote</span></p>
+          <ul class="resume-bullets">
+            <li>Delivered end-to-end ML projects covering data collection, cleaning, feature engineering, model training (scikit-learn, TensorFlow) and evaluation.</li>
+            <li>Built and evaluated classification and regression models with hyperparameter tuning and comparative analysis.</li>
+            <li>Produced data visualisations and EDA reports to communicate insights to technical leads.</li>
+          </ul>
+          <div class="resume-tags">
+            <span>scikit-learn</span>
+            <span>TensorFlow</span>
+            <span>EDA</span>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <h3>Project Engineer</h3>
+            <time>Jul 2021 — Jul 2022</time>
+          </div>
+          <p class="resume-company">Millennium Aero Dynamics &amp; Mazagon Dock <span>· Mumbai, Maharashtra</span></p>
+          <ul class="resume-bullets">
+            <li>Site engineer on naval submarine projects (P17 Alpha, MRLC): equipment inspection, installation and quality control.</li>
+            <li>Managed materials, daily manpower planning and progress reporting across shop floor and job site.</li>
+            <li>Handled billing and estimation for residential projects within 5% variance.</li>
+          </ul>
+          <div class="resume-tags">
+            <span>Mechanical Engineering</span>
+            <span>QA</span>
+            <span>Project Coordination</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Selected Projects</h2>
+
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <h3>End-to-End Document Intelligence Pipeline for Logistics</h3>
+            <time>Production system</time>
+          </div>
+          <ul class="resume-bullets">
+            <li>Designed a full-stack Python ETL system to extract, validate and load structured data from logistics airway bills into SQL Server.</li>
+            <li>Integrated OpenAI and Gemini APIs with tiered fallbacks: native PDF text → LLM parsing → OCR (Google Vision / Tesseract) plus OpenCV and PIL preprocessing.</li>
+            <li>Implemented regex-based entity verification and schema enforcement for high data integrity before ingestion, with real-time logging and error recovery.</li>
+          </ul>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <h3>Multi-Agent Text-to-SQL Assistant</h3>
+            <time>LangChain + LangGraph</time>
+          </div>
+          <ul class="resume-bullets">
+            <li>Architected a stateful LangGraph workflow of specialised agents: relevance checker, SQL generator, SQL validator, query evaluator, feedback formatter and answer generator.</li>
+            <li>Implemented conditional routing and a self-correcting feedback loop so failed validation is converted into structured feedback and routed back for refinement.</li>
+            <li>Added production guardrails: read-only enforcement, SQL injection prevention, schema grounding and graceful fallbacks; exposed via FastAPI.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Education</h2>
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <h3>Master's in Data Science &amp; Analytics with AI and AWS</h3>
+            <time>Sep 2022 — Sep 2023</time>
+          </div>
+          <p class="resume-company">Itvedant Education Pvt. Ltd.</p>
+        </div>
+        <div class="resume-item">
+          <div class="resume-item-head">
+            <h3>Bachelor of Engineering — Mechanical</h3>
+            <time>Jul 2014 — Jul 2018</time>
+          </div>
+          <p class="resume-company">University of Mumbai</p>
+        </div>
+      </section>
+
+      <section class="resume-section">
+        <h2>Certifications</h2>
+        <ul class="resume-bullets">
+          <li>AI Agents and Agentic AI with Python &amp; Generative AI — Vanderbilt University</li>
+          <li>Retrieval Augmented Generation (RAG) — DeepLearning.AI</li>
+          <li>Data Science and Analytics Virtual Experience Program — Boston Consulting Group</li>
+          <li>Analytics with Python — Itvedant</li>
+          <li>Machine Learning, Deep Learning and NLP — Itvedant</li>
+          <li>Fundamentals of SQL — Itvedant</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
